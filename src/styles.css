@@ -232,6 +232,12 @@ body.banner-on #banner { transform: translateY(0); }
   line-height: 1.8;
 }
 
+/* On the dark journey beats the gold was hard to read — soften toward cream. */
+.beat .kicker {
+  color: var(--gold-soft);
+  text-shadow: 0 1px 8px rgba(22, 31, 20, 0.45);
+}
+
 .divider {
   display: flex;
   align-items: center;
