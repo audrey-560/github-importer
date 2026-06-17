@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { createFileRoute, Link, useServerFn } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { submitSignup } from "@/lib/signups.functions";
 
 export const Route = createFileRoute("/join")({
