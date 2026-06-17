@@ -533,3 +533,60 @@ body.static #banner { transform: translateY(0); }
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* ---------- Girls Gotta Golf wordmark ---------- */
+.ggg-wordmark {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 0.35em;
+  row-gap: 0.05em;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  line-height: 1;
+  color: var(--cream);
+}
+.ggg-word {
+  display: inline-flex;
+  align-items: baseline;
+}
+.ggg-ltr {
+  position: relative;
+  display: inline-block;
+}
+/* Golf ball as the dot on the i */
+.ggg-i { position: relative; }
+.ggg-ball {
+  position: absolute;
+  width: 0.28em;
+  height: 0.28em;
+  left: 50%;
+  top: -0.05em;
+  transform: translateX(-50%);
+  color: var(--gold-soft);
+}
+/* Golf club leaning inside the G of Gotta */
+.ggg-g-club { position: relative; }
+.ggg-club {
+  position: absolute;
+  left: 38%;
+  top: 18%;
+  width: 0.55em;
+  height: 0.92em;
+  color: var(--gold-soft);
+  pointer-events: none;
+}
+/* Flag flying off the f of Golf */
+.ggg-f-flag { position: relative; }
+.ggg-flag {
+  position: absolute;
+  left: 0.05em;
+  top: -0.18em;
+  width: 0.42em;
+  height: 1em;
+  color: var(--gold-soft);
+  pointer-events: none;
+}
