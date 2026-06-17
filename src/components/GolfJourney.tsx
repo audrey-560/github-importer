@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "@tanstack/react-router";
+import GirlsGottaGolfWordmark from "@/components/GirlsGottaGolfWordmark";
 
 const STILLS = [
   { base: "/assets/stills/01-setup", focal: [0.45, 0.82] as [number, number] },
@@ -407,10 +408,12 @@ export default function GolfJourney() {
 
           <div className="beat veil" id="beat-title">
             <p className="kicker">
-              A golf club for girls — building careers, friendships, and a better
-              weekend plan
+              A golf community for girls, building careers, friendships, and a
+              better weekend plan
             </p>
-            <h1>Girls Gotta Golf</h1>
+            <h1>
+              <GirlsGottaGolfWordmark />
+            </h1>
             <div className="divider">
               <span></span>
               <b></b>
@@ -444,7 +447,7 @@ export default function GolfJourney() {
               alt="Girls Gotta Golf"
               id="logo-reveal"
             />
-            <p className="sink-line">See you on the green.</p>
+            <p className="sink-line">Your circle is already out there.</p>
           </div>
 
           <div id="fallback" hidden />
