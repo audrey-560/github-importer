@@ -408,10 +408,12 @@ export default function GolfJourney() {
 
           <div className="beat veil" id="beat-title">
             <p className="kicker">
-              A golf club for girls — building careers, friendships, and a better
-              weekend plan
+              A golf community for girls, building careers, friendships, and a
+              better weekend plan
             </p>
-            <h1>Girls Gotta Golf</h1>
+            <h1>
+              <GirlsGottaGolfWordmark />
+            </h1>
             <div className="divider">
               <span></span>
               <b></b>
