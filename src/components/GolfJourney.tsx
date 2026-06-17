@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "@tanstack/react-router";
+import GirlsGottaGolfWordmark from "@/components/GirlsGottaGolfWordmark";
 
 const STILLS = [
   { base: "/assets/stills/01-setup", focal: [0.45, 0.82] as [number, number] },
