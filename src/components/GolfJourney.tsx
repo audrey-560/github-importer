@@ -447,7 +447,7 @@ export default function GolfJourney() {
               alt="Girls Gotta Golf"
               id="logo-reveal"
             />
-            <p className="sink-line">See you on the green.</p>
+            <p className="sink-line">Your circle is already out there.</p>
           </div>
 
           <div id="fallback" hidden />
