@@ -1,29 +1,9 @@
-## Plan
+## Plan: Final checks + publish
 
-### 1. Update founder story on home page
-Replace the current founder quote in `src/routes/index.tsx` with your exact text:
-> “I picked up golf in 2022 and quickly realized how hard it was to find girlfriends to play with. Girls Gotta Golf is my way of building the community I wish I had when I started. A place to learn the game, meet other women, and complete the perfect weekend plan.”
+1. **Backend health check** — run `supabase--cloud_status` to confirm Lovable Cloud is healthy, and confirm the `signups` table is reachable with a quick read.
+2. **Signup smoke test** — submit a test entry via the live `/join` form (or directly invoke the server function) and confirm it landed in the `signups` table. Delete the test row afterward.
+3. **Mobile check** — open the preview at mobile viewport (390×844), scroll through the landing journey, story section, and Join form. Screenshot anything that looks off; fix obvious issues (overflow, text sizing, tap targets).
+4. **Security scan** — run a security scan and confirm no critical findings before publishing.
+5. **Publish** — call `preview_ui--publish` with the metadata preflight (title, description, OG tags, favicon, og:image already in place).
 
-### 2. Add back-to-home link on Join page
-Insert a small “← Back to home” text link above the form heading in `src/routes/join.tsx`.
-
-### 3. Generate favicon & OG image
-- Create a favicon from your existing logo (`public/assets/stills/logo-green.png`)
-- Create a branded `og:image` (1200×630) for social sharing
-- Wire both into `src/routes/__root.tsx` via `head()` links/meta tags
-
-### 4. Verify signup form end-to-end
-- Confirm the `signups` table, RLS policy, and GRANTs are in place (migration already exists)
-- Submit a test entry to ensure the server function and insert work
-
-### 5. Mobile smoke test
-- Scroll through the landing journey and confirm readability
-- Test the Join form on a narrow viewport
-
-### 6. Publish the website
-Once steps 1–5 pass, publish to make the site live.
-
----
-
-**Open question for you:**
-Do you want the founder quote to be in quotation marks (as a direct quote from you) or plain paragraph text? I can style it either way.
+I'll report mobile findings and the test-signup result before hitting publish, and stop if anything looks broken.
