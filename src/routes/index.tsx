@@ -4,10 +4,10 @@ import GolfJourney from "@/components/GolfJourney";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Girls Gotta Golf — A golf club for girls" },
-      { name: "description", content: "A golf club for girls in Toronto — beginner-friendly events, clinics, group play, and post-golf socials." },
+      { title: "Girls Gotta Golf — A golf community for girls" },
+      { name: "description", content: "A golf community for girls in Toronto — beginner-friendly events, clinics, group play, and post-golf socials." },
       { property: "og:title", content: "Girls Gotta Golf" },
-      { property: "og:description", content: "A modern third place for women — active, social, stylish, grounded in real connections." },
+      { property: "og:description", content: "A golf community for girls — active, social, stylish, grounded in real connections." },
     ],
   }),
   component: LandingPage,
