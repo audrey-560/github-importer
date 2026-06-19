@@ -1,27 +1,27 @@
-## Plan: Replace wordmark with uploaded logo image
+## Revert wordmark to original styled text
 
-Swap the custom-built `GirlsGottaGolfWordmark` SVG/HTML component for the uploaded PNG logo, recolored to match the current cream/white wordmark color so it sits naturally on the dark hero frame.
+Go back to the original CSS-styled "Girls Gotta Golf" text wordmark (white, original smaller size) and keep only two small art accents.
 
-### Steps
+### Changes
 
-1. **Upload the logo as a Lovable Asset**
-   - Register `user-uploads://hf_20260617_191545_...png` via `lovable-assets create` into `src/assets/ggg-wordmark.png.asset.json`. Keeps the binary off the repo.
+1. **`src/components/GirlsGottaGolfWordmark.tsx`** — replace the current PNG-mask implementation with the original three-span text version:
+   - `<h1 class="ggg-wordmark">` containing three `<span>` words: "Girls", "Gotta", "Golf".
+   - In "Girls": replace the dot on the "i" with a small golf ball (white circle with subtle dimple shading) absolutely positioned above the "i".
+   - In "Gotta": plain text (drop the previous golf-club-in-G treatment).
+   - In "Golf": replace the final "f" with an "f" whose top hook is styled as a small triangular flag (keep the vertical stroke as the pole, add a flag shape via pseudo-element or inline SVG).
+   - Keep an `sr-only` "Girls Gotta Golf" for accessibility.
 
-2. **Rewrite `src/components/GirlsGottaGolfWordmark.tsx`**
-   - Replace the SVG/spans implementation with a single `<h1>` containing a masked `<span>`:
-     - `mask-image: url(<asset url>)`, `-webkit-mask-image` fallback
-     - `mask-size: contain`, `mask-repeat: no-repeat`, `mask-position: center`
-     - `background-color: var(--cream)` (the existing wordmark color)
-     - `aspect-ratio` matching the uploaded image (~1920×820 → ~2.34)
-     - Width responsive via existing `clamp()` sizing used today
-   - Include an accessible `<span class="sr-only">Girls Gotta Golf</span>` for screen readers.
-   - Keep the component's exported name and props signature so `GolfJourney.tsx` doesn't need changes.
+2. **`src/styles.css`** — restore the original `.ggg-wordmark` typography rules:
+   - Color: solid `#ffffff` (pure white, not cream).
+   - Size: original `clamp()` values from the first version (smaller than current, so it no longer covers the model's head).
+   - Re-add `.ggg-ball` and `.ggg-flag` helper classes for the two accents.
+   - Remove the `.ggg-wordmark-mask`, `mask-image`, and cream-color rules added for the PNG approach.
+   - Remove the `.ggg-club` rule (no longer used).
 
-3. **Trim `src/styles.css`**
-   - Remove the now-unused `.ggg-ball`, `.ggg-club`, `.ggg-flag` rules.
-   - Keep `.ggg-wordmark` but repurpose it to size/layout the masked element.
+3. **Assets cleanup (optional, not blocking)** — `src/assets/ggg-wordmark.png.asset.json` becomes unused. Leave it in place for now; can be deleted later if you confirm.
 
-### Technical notes
-- CSS `mask-image` with `background-color` is the cleanest way to recolor a PNG to a design token without generating new image variants — works in all modern browsers (Chrome/Safari/Firefox via `mask-image` + `-webkit-mask-image`).
-- No change to copy, layout, or the rest of the hero composition.
-- No data/business-logic changes.
+### Out of scope
+- No layout, hero image, or other section changes.
+- No copy changes elsewhere on the page.
+
+Want me to proceed?
