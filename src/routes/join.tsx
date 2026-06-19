@@ -85,6 +85,7 @@ function JoinPage() {
 
   return (
     <div className="join-page">
+      <Link to="/" className="back-link back-link-top">← Back to home</Link>
       <img src="/assets/stills/logo-green.png" alt="Girls Gotta Golf" className="join-mark" />
       <h1>Join the club</h1>
       <p className="join-sub">
