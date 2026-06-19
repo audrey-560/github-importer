@@ -422,8 +422,8 @@ export default function GolfJourney() {
                 <defs>
                   <radialGradient id="ggg-ball" cx="38%" cy="30%" r="75%">
                     <stop offset="0%" stopColor="#ffffff" />
-                    <stop offset="55%" stopColor="#f4f4f4" />
-                    <stop offset="100%" stopColor="#dcdcdc" />
+                    <stop offset="55%" stopColor="#f9f2ea" />
+                    <stop offset="100%" stopColor="#e7dccd" />
                   </radialGradient>
                 </defs>
                 <text
@@ -434,29 +434,21 @@ export default function GolfJourney() {
                   fontWeight={500}
                   fontSize={120}
                   letterSpacing={2}
-                  fill="#ffffff"
+                  fill="#f9f2ea"
                 >
                   Girls Gotta Golf
                 </text>
                 <g>
-                  <circle cx="167" cy="49" r="18" fill="url(#ggg-ball)" />
-                  <g fill="#b8b8b8" opacity="0.65">
-                    <circle cx="162" cy="43" r="1.5" />
-                    <circle cx="172" cy="43" r="1.5" />
-                    <circle cx="158" cy="49" r="1.5" />
-                    <circle cx="167" cy="49" r="1.5" />
-                    <circle cx="176" cy="49" r="1.5" />
-                    <circle cx="162" cy="55" r="1.5" />
-                    <circle cx="172" cy="55" r="1.5" />
+                  <circle cx="168" cy="86" r="14" fill="url(#ggg-ball)" />
+                  <g fill="#cdbfa9" opacity="0.6">
+                    <circle cx="164" cy="82" r="1.3" />
+                    <circle cx="172" cy="82" r="1.3" />
+                    <circle cx="160" cy="86" r="1.3" />
+                    <circle cx="168" cy="86" r="1.3" />
+                    <circle cx="176" cy="86" r="1.3" />
+                    <circle cx="164" cy="90" r="1.3" />
+                    <circle cx="172" cy="90" r="1.3" />
                   </g>
-                </g>
-                <g stroke="#ffffff" strokeWidth="3" strokeLinecap="round">
-                  <line x1="912" y1="16" x2="912" y2="58" />
-                  <path
-                    d="M912 18 L949 27 L912 36 Z"
-                    fill="#ffffff"
-                    stroke="none"
-                  />
                 </g>
               </svg>
             </h1>
