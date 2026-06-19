@@ -1,27 +1,27 @@
-## Revert wordmark to original styled text
+## Goal
+Replace the current `GirlsGottaGolfWordmark` component on the landing page with an inline SVG wordmark that the user provided, sized and styled exactly as specified.
 
-Go back to the original CSS-styled "Girls Gotta Golf" text wordmark (white, original smaller size) and keep only two small art accents.
+## Changes
 
-### Changes
+### 1. `src/components/GolfJourney.tsx`
+Replace the existing `<h1><GirlsGottaGolfWordmark /></h1>` block with the user's SVG wordmark.
+- Text fill: `#ffffff` (pure white) per user confirmation — not the cream `#f9f2ea` from the original SVG snippet.
+- Ball highlight dots and flag stroke/fill also updated to `#ffffff`.
+- Keep `role="img"`, `aria-label="Girls Gotta Golf"`, and `className="wordmark"`.
+- Remove the import for `GirlsGottaGolfWordmark`.
 
-1. **`src/components/GirlsGottaGolfWordmark.tsx`** — replace the current PNG-mask implementation with the original three-span text version:
-   - `<h1 class="ggg-wordmark">` containing three `<span>` words: "Girls", "Gotta", "Golf".
-   - In "Girls": replace the dot on the "i" with a small golf ball (white circle with subtle dimple shading) absolutely positioned above the "i".
-   - In "Gotta": plain text (drop the previous golf-club-in-G treatment).
-   - In "Golf": replace the final "f" with an "f" whose top hook is styled as a small triangular flag (keep the vertical stroke as the pole, add a flag shape via pseudo-element or inline SVG).
-   - Keep an `sr-only` "Girls Gotta Golf" for accessibility.
+### 2. `src/styles.css`
+Add the `.beat h1 .wordmark` rule immediately after the `.beat h1 { … }` block:
+```css
+.beat h1 .wordmark {
+  display: block;
+  width: clamp(320px, 78vw, 1020px);
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+```
 
-2. **`src/styles.css`** — restore the original `.ggg-wordmark` typography rules:
-   - Color: solid `#ffffff` (pure white, not cream).
-   - Size: original `clamp()` values from the first version (smaller than current, so it no longer covers the model's head).
-   - Re-add `.ggg-ball` and `.ggg-flag` helper classes for the two accents.
-   - Remove the `.ggg-wordmark-mask`, `mask-image`, and cream-color rules added for the PNG approach.
-   - Remove the `.ggg-club` rule (no longer used).
-
-3. **Assets cleanup (optional, not blocking)** — `src/assets/ggg-wordmark.png.asset.json` becomes unused. Leave it in place for now; can be deleted later if you confirm.
-
-### Out of scope
-- No layout, hero image, or other section changes.
-- No copy changes elsewhere on the page.
-
-Want me to proceed?
+### 3. Cleanup
+- Delete `src/components/GirlsGottaGolfWordmark.tsx` — no longer used anywhere in the codebase.
+- Remove all `.ggg-*` CSS rules from `src/styles.css` (`.ggg-wordmark`, `.ggg-word`, `.ggg-i`, `.ggg-i-stem`, `.ggg-ball`, `.ggg-f`, `.ggg-flag`).

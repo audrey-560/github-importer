@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import GirlsGottaGolfWordmark from "@/components/GirlsGottaGolfWordmark";
+
 
 const STILLS = [
   { base: "/assets/stills/01-setup", focal: [0.45, 0.82] as [number, number] },
@@ -412,7 +412,53 @@ export default function GolfJourney() {
               better weekend plan
             </p>
             <h1>
-              <GirlsGottaGolfWordmark />
+              <svg
+                className="wordmark"
+                viewBox="0 0 1000 240"
+                role="img"
+                aria-label="Girls Gotta Golf"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <radialGradient id="ggg-ball" cx="38%" cy="30%" r="75%">
+                    <stop offset="0%" stopColor="#ffffff" />
+                    <stop offset="55%" stopColor="#f4f4f4" />
+                    <stop offset="100%" stopColor="#dcdcdc" />
+                  </radialGradient>
+                </defs>
+                <text
+                  x="500"
+                  y="172"
+                  textAnchor="middle"
+                  fontFamily="'Playfair Display', Georgia, serif"
+                  fontWeight={500}
+                  fontSize={120}
+                  letterSpacing={2}
+                  fill="#ffffff"
+                >
+                  Girls Gotta Golf
+                </text>
+                <g>
+                  <circle cx="167" cy="49" r="18" fill="url(#ggg-ball)" />
+                  <g fill="#b8b8b8" opacity="0.65">
+                    <circle cx="162" cy="43" r="1.5" />
+                    <circle cx="172" cy="43" r="1.5" />
+                    <circle cx="158" cy="49" r="1.5" />
+                    <circle cx="167" cy="49" r="1.5" />
+                    <circle cx="176" cy="49" r="1.5" />
+                    <circle cx="162" cy="55" r="1.5" />
+                    <circle cx="172" cy="55" r="1.5" />
+                  </g>
+                </g>
+                <g stroke="#ffffff" strokeWidth="3" strokeLinecap="round">
+                  <line x1="912" y1="16" x2="912" y2="58" />
+                  <path
+                    d="M912 18 L949 27 L912 36 Z"
+                    fill="#ffffff"
+                    stroke="none"
+                  />
+                </g>
+              </svg>
             </h1>
             <div className="divider">
               <span></span>
