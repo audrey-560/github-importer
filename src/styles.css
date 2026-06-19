@@ -541,6 +541,13 @@ body.static #banner { transform: translateY(0); }
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+.back-link-top {
+  align-self: flex-start;
+  margin-bottom: 18px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+.back-link-top:hover { opacity: 1; }
 
 
 
