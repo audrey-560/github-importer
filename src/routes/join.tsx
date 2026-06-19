@@ -9,7 +9,7 @@ export const Route = createFileRoute("/join")({
       { title: "Join the club — Girls Gotta Golf" },
       { name: "description", content: "Tell us about you so we can plan the right tee times, clinics, and socials. Takes under a minute." },
       { property: "og:title", content: "Join Girls Gotta Golf" },
-      { property: "og:description", content: "A modern golf club for girls — beginner-friendly events, clinics, group play, and post-golf socials." },
+      { property: "og:description", content: "A golf community for girls — beginner-friendly events, clinics, group play, and post-golf socials." },
     ],
   }),
   component: JoinPage,

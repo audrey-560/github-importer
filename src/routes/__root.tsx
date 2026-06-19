@@ -77,8 +77,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Girls Gotta Golf — A golf club for girls" },
-      { name: "description", content: "A golf club for girls in Toronto. Beginner-friendly events, clinics, group play, and post-golf socials." },
+      { title: "Girls Gotta Golf — A golf community for girls" },
+      { name: "description", content: "A golf community for girls in Toronto. Beginner-friendly events, clinics, group play, and post-golf socials." },
       { property: "og:title", content: "Girls Gotta Golf" },
       { property: "og:description", content: "A modern third place for women — active, social, stylish, grounded in real connections." },
       { property: "og:type", content: "website" },
