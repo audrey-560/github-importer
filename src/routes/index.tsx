@@ -22,10 +22,10 @@ function LandingPage() {
         <p className="kicker">Why this exists</p>
         <h2>A golf community for girls.</h2>
         <p className="founder">
-          “I picked up golf in 2022 and quickly realized how hard it was to find
+          “I picked up golf in 2022 and have always struggled to find
           girlfriends to play with. Girls Gotta Golf is my way of building the
           community I wish I had when I started. A place to learn the game,
-          meet other women, and complete the perfect weekend plan.”
+          meet other women, and turn a weekend into the perfect plan.”
         </p>
 
         <p className="reassure">Never golfed? Perfect.</p>
